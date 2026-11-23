@@ -1,0 +1,21 @@
+{
+ "excluded": [
+  "AV:cap_pen:3dw:a1e8db4ff9194437920de219c00d1c3b",
+  "AV:cap_pen:3dw:cdf54835677a246f9bbaaf08505f5db3",
+  "AV:floor_lamp:3dfModel:3df9284e-6e00-459e-9946-ed1c58df3f3e",
+  "AV:floor_lamp:3dfModel:8c96c9c5-2950-4448-b943-7d306184c672",
+  "AV:floor_lamp:3dfModel:9e17d130-682e-4292-997d-bf59c76aaf7b",
+  "AV:floor_lamp:3dfModel:e3cf90ae-d6b4-42a4-8db7-7034db37774b",
+  "AV:floor_lamp:abo:B073P3HHFV",
+  "AV:floor_lamp:abo:B0742DNY41",
+  "AV:floor_lamp:abo:B07DTLWMN5",
+  "AV:scissors:objaverse:05a12bc9a23c4c7bb5a84601b61221ce",
+  "AV:scissors:objaverse:2b1120c4b517409184413ed709c57a66",
+  "AV:scissors:objaverse:838d3d5078a4430196c08881b7df3249",
+  "AV:scissors:objaverse:b8b60a3a9f2e48d9880a2bd29027d8a8",
+  "AV:scissors:objaverse:d624e60760574698982856f7fe98a471",
+  "AV:scissors:texverse:2787b36afda5408fbbc9520e9562b768_1024",
+  "AV:scissors:texverse:311ce0c7867b47ff9dc0d7e8fada78ad_1024",
+  "AV:scissors:texverse:4425427185974ed793173a6b31aa7247_1024"
+ ]
+}

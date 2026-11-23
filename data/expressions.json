@@ -1,0 +1,1190 @@
+[
+ {
+  "cat": "bottle",
+  "part": "lid",
+  "pid": 24,
+  "type": "synonym",
+  "expr": "cap",
+  "answer": "lid",
+  "choice": 24
+ },
+ {
+  "cat": "bottle",
+  "part": "lid",
+  "pid": 24,
+  "type": "functional",
+  "expr": "seals the opening to prevent spills",
+  "answer": "lid",
+  "choice": 24
+ },
+ {
+  "cat": "bottle",
+  "part": "straw",
+  "pid": 55,
+  "type": "synonym",
+  "expr": "drinking tube",
+  "answer": "straw",
+  "choice": 55
+ },
+ {
+  "cat": "bottle",
+  "part": "straw",
+  "pid": 55,
+  "type": "functional",
+  "expr": "lets you sip liquid without tilting",
+  "answer": "straw",
+  "choice": 55
+ },
+ {
+  "cat": "bottle",
+  "part": "stripe",
+  "pid": 54,
+  "type": "synonym",
+  "expr": "decorative band",
+  "answer": "stripe",
+  "choice": 54
+ },
+ {
+  "cat": "bottle",
+  "part": "stripe",
+  "pid": 54,
+  "type": "functional",
+  "expr": "adds visual decoration around the bottle",
+  "answer": "stripe",
+  "choice": 54
+ },
+ {
+  "cat": "bucket",
+  "part": "base",
+  "pid": 3,
+  "type": "synonym",
+  "expr": "bottom",
+  "answer": "base",
+  "choice": 3
+ },
+ {
+  "cat": "bucket",
+  "part": "base",
+  "pid": 3,
+  "type": "functional",
+  "expr": "lets the pail stand upright on the ground",
+  "answer": "base",
+  "choice": 3
+ },
+ {
+  "cat": "bucket",
+  "part": "body",
+  "pid": 10,
+  "type": "synonym",
+  "expr": "pail wall",
+  "answer": "body",
+  "choice": 10
+ },
+ {
+  "cat": "bucket",
+  "part": "body",
+  "pid": 10,
+  "type": "functional",
+  "expr": "holds the water or contents inside",
+  "answer": "body",
+  "choice": 10
+ },
+ {
+  "cat": "bucket",
+  "part": "handle",
+  "pid": 19,
+  "type": "synonym",
+  "expr": "bail",
+  "answer": "handle",
+  "choice": 19
+ },
+ {
+  "cat": "bucket",
+  "part": "handle",
+  "pid": 19,
+  "type": "functional",
+  "expr": "gripped to carry the pail",
+  "answer": "handle",
+  "choice": 19
+ },
+ {
+  "cat": "bucket",
+  "part": "lid",
+  "pid": 24,
+  "type": "synonym",
+  "expr": "cover",
+  "answer": "lid",
+  "choice": 24
+ },
+ {
+  "cat": "bucket",
+  "part": "lid",
+  "pid": 24,
+  "type": "functional",
+  "expr": "closes the top opening to seal contents",
+  "answer": "lid",
+  "choice": 24
+ },
+ {
+  "cat": "chair",
+  "part": "backrest",
+  "pid": 2,
+  "type": "synonym",
+  "expr": "chair back",
+  "answer": "backrest",
+  "choice": 2
+ },
+ {
+  "cat": "chair",
+  "part": "backrest",
+  "pid": 2,
+  "type": "functional",
+  "expr": "supports the sitter's back while sitting",
+  "answer": "backrest",
+  "choice": 2
+ },
+ {
+  "cat": "chair",
+  "part": "base",
+  "pid": 3,
+  "type": "synonym",
+  "expr": "legs",
+  "answer": "base",
+  "choice": 3
+ },
+ {
+  "cat": "chair",
+  "part": "base",
+  "pid": 3,
+  "type": "functional",
+  "expr": "holds the chair up off the floor",
+  "answer": "base",
+  "choice": 3
+ },
+ {
+  "cat": "chair",
+  "part": "pillow",
+  "pid": 26,
+  "type": "synonym",
+  "expr": "cushion",
+  "answer": "pillow",
+  "choice": 26
+ },
+ {
+  "cat": "chair",
+  "part": "pillow",
+  "pid": 26,
+  "type": "functional",
+  "expr": "soft padding added for extra comfort",
+  "answer": "pillow",
+  "choice": 26
+ },
+ {
+  "cat": "chair",
+  "part": "seat",
+  "pid": 32,
+  "type": "synonym",
+  "expr": "sitting surface",
+  "answer": "seat",
+  "choice": 32
+ },
+ {
+  "cat": "chair",
+  "part": "seat",
+  "pid": 32,
+  "type": "functional",
+  "expr": "where a person rests their bottom",
+  "answer": "seat",
+  "choice": 32
+ },
+ {
+  "cat": "clock",
+  "part": "clock hand",
+  "pid": 14,
+  "type": "synonym",
+  "expr": "pointer",
+  "answer": "clock hand",
+  "choice": 14
+ },
+ {
+  "cat": "clock",
+  "part": "clock hand",
+  "pid": 14,
+  "type": "functional",
+  "expr": "points to the current time on the dial",
+  "answer": "clock hand",
+  "choice": 14
+ },
+ {
+  "cat": "dishwasher",
+  "part": "base",
+  "pid": 3,
+  "type": "synonym",
+  "expr": "plinth",
+  "answer": "base",
+  "choice": 3
+ },
+ {
+  "cat": "dishwasher",
+  "part": "base",
+  "pid": 3,
+  "type": "functional",
+  "expr": "supports the appliance on the floor",
+  "answer": "base",
+  "choice": 3
+ },
+ {
+  "cat": "dishwasher",
+  "part": "handle",
+  "pid": 19,
+  "type": "synonym",
+  "expr": "pull grip",
+  "answer": "handle",
+  "choice": 19
+ },
+ {
+  "cat": "dishwasher",
+  "part": "handle",
+  "pid": 19,
+  "type": "functional",
+  "expr": "grasped to open the door",
+  "answer": "handle",
+  "choice": 19
+ },
+ {
+  "cat": "dishwasher",
+  "part": "horizontal panel",
+  "pid": 21,
+  "type": "synonym",
+  "expr": "top cover",
+  "answer": "horizontal panel",
+  "choice": 21
+ },
+ {
+  "cat": "dishwasher",
+  "part": "horizontal panel",
+  "pid": 21,
+  "type": "functional",
+  "expr": "closes off the unit from above",
+  "answer": "horizontal panel",
+  "choice": 21
+ },
+ {
+  "cat": "dishwasher",
+  "part": "vertical panel",
+  "pid": 40,
+  "type": "synonym",
+  "expr": "door front",
+  "answer": "vertical panel",
+  "choice": 40
+ },
+ {
+  "cat": "dishwasher",
+  "part": "vertical panel",
+  "pid": 40,
+  "type": "functional",
+  "expr": "swings open to load dishes",
+  "answer": "vertical panel",
+  "choice": 40
+ },
+ {
+  "cat": "door",
+  "part": "handle",
+  "pid": 19,
+  "type": "synonym",
+  "expr": "doorknob",
+  "answer": "handle",
+  "choice": 19
+ },
+ {
+  "cat": "door",
+  "part": "handle",
+  "pid": 19,
+  "type": "functional",
+  "expr": "grip used to pull or push open",
+  "answer": "handle",
+  "choice": 19
+ },
+ {
+  "cat": "door",
+  "part": "lock",
+  "pid": 60,
+  "type": "synonym",
+  "expr": "latch bolt mechanism",
+  "answer": "lock",
+  "choice": 60
+ },
+ {
+  "cat": "door",
+  "part": "lock",
+  "pid": 60,
+  "type": "functional",
+  "expr": "secures it shut against unwanted entry",
+  "answer": "lock",
+  "choice": 60
+ },
+ {
+  "cat": "door",
+  "part": "stopper",
+  "pid": 66,
+  "type": "synonym",
+  "expr": "doorstop",
+  "answer": "stopper",
+  "choice": 66
+ },
+ {
+  "cat": "door",
+  "part": "stopper",
+  "pid": 66,
+  "type": "functional",
+  "expr": "keeps it from swinging too far",
+  "answer": "stopper",
+  "choice": 66
+ },
+ {
+  "cat": "dresser",
+  "part": "base",
+  "pid": 3,
+  "type": "synonym",
+  "expr": "plinth",
+  "answer": "base",
+  "choice": 3
+ },
+ {
+  "cat": "dresser",
+  "part": "base",
+  "pid": 3,
+  "type": "functional",
+  "expr": "supports the dresser on the floor",
+  "answer": "base",
+  "choice": 3
+ },
+ {
+  "cat": "dresser",
+  "part": "handle",
+  "pid": 19,
+  "type": "synonym",
+  "expr": "pull knob",
+  "answer": "handle",
+  "choice": 19
+ },
+ {
+  "cat": "dresser",
+  "part": "handle",
+  "pid": 19,
+  "type": "functional",
+  "expr": "grasped to pull drawers open",
+  "answer": "handle",
+  "choice": 19
+ },
+ {
+  "cat": "dresser",
+  "part": "horizontal panel",
+  "pid": 21,
+  "type": "synonym",
+  "expr": "shelf board or top",
+  "answer": "horizontal panel",
+  "choice": 21
+ },
+ {
+  "cat": "dresser",
+  "part": "horizontal panel",
+  "pid": 21,
+  "type": "functional",
+  "expr": "forms flat surfaces and divides drawer levels",
+  "answer": "horizontal panel",
+  "choice": 21
+ },
+ {
+  "cat": "dresser",
+  "part": "vertical panel",
+  "pid": 40,
+  "type": "synonym",
+  "expr": "side wall",
+  "answer": "vertical panel",
+  "choice": 40
+ },
+ {
+  "cat": "dresser",
+  "part": "vertical panel",
+  "pid": 40,
+  "type": "functional",
+  "expr": "encloses the sides and holds up the top",
+  "answer": "vertical panel",
+  "choice": 40
+ },
+ {
+  "cat": "fan",
+  "part": "blade",
+  "pid": 8,
+  "type": "synonym",
+  "expr": "vane",
+  "answer": "blade",
+  "choice": 8
+ },
+ {
+  "cat": "fan",
+  "part": "blade",
+  "pid": 8,
+  "type": "functional",
+  "expr": "spins to push air and create breeze",
+  "answer": "blade",
+  "choice": 8
+ },
+ {
+  "cat": "fan",
+  "part": "body",
+  "pid": 10,
+  "type": "synonym",
+  "expr": "housing",
+  "answer": "body",
+  "choice": 10
+ },
+ {
+  "cat": "fan",
+  "part": "body",
+  "pid": 10,
+  "type": "functional",
+  "expr": "holds the motor and supports other components",
+  "answer": "body",
+  "choice": 10
+ },
+ {
+  "cat": "garbage_bin",
+  "part": "base",
+  "pid": 3,
+  "type": "synonym",
+  "expr": "bottom",
+  "answer": "base",
+  "choice": 3
+ },
+ {
+  "cat": "garbage_bin",
+  "part": "base",
+  "pid": 3,
+  "type": "functional",
+  "expr": "keeps the bin standing steady on the floor",
+  "answer": "base",
+  "choice": 3
+ },
+ {
+  "cat": "garbage_bin",
+  "part": "body",
+  "pid": 10,
+  "type": "synonym",
+  "expr": "container",
+  "answer": "body",
+  "choice": 10
+ },
+ {
+  "cat": "garbage_bin",
+  "part": "body",
+  "pid": 10,
+  "type": "functional",
+  "expr": "holds the thrown-away trash",
+  "answer": "body",
+  "choice": 10
+ },
+ {
+  "cat": "garbage_bin",
+  "part": "handle",
+  "pid": 19,
+  "type": "synonym",
+  "expr": "grip",
+  "answer": "handle",
+  "choice": 19
+ },
+ {
+  "cat": "garbage_bin",
+  "part": "handle",
+  "pid": 19,
+  "type": "functional",
+  "expr": "grasped to lift or carry the bin",
+  "answer": "handle",
+  "choice": 19
+ },
+ {
+  "cat": "garbage_bin",
+  "part": "lid",
+  "pid": 24,
+  "type": "synonym",
+  "expr": "cover",
+  "answer": "lid",
+  "choice": 24
+ },
+ {
+  "cat": "garbage_bin",
+  "part": "lid",
+  "pid": 24,
+  "type": "functional",
+  "expr": "closes over the opening to contain odors",
+  "answer": "lid",
+  "choice": 24
+ },
+ {
+  "cat": "lamp",
+  "part": "base",
+  "pid": 3,
+  "type": "synonym",
+  "expr": "stand",
+  "answer": "base",
+  "choice": 3
+ },
+ {
+  "cat": "lamp",
+  "part": "base",
+  "pid": 3,
+  "type": "functional",
+  "expr": "keeps the whole light steady and upright",
+  "answer": "base",
+  "choice": 3
+ },
+ {
+  "cat": "lamp",
+  "part": "bulb",
+  "pid": 11,
+  "type": "synonym",
+  "expr": "light globe",
+  "answer": "bulb",
+  "choice": 11
+ },
+ {
+  "cat": "lamp",
+  "part": "bulb",
+  "pid": 11,
+  "type": "functional",
+  "expr": "glows to produce the illumination",
+  "answer": "bulb",
+  "choice": 11
+ },
+ {
+  "cat": "lamp",
+  "part": "lamp cover",
+  "pid": 23,
+  "type": "synonym",
+  "expr": "shade",
+  "answer": "lamp cover",
+  "choice": 23
+ },
+ {
+  "cat": "lamp",
+  "part": "lamp cover",
+  "pid": 23,
+  "type": "functional",
+  "expr": "diffuses glare and softens emitted light",
+  "answer": "lamp cover",
+  "choice": 23
+ },
+ {
+  "cat": "microwave",
+  "part": "handle",
+  "pid": 19,
+  "type": "synonym",
+  "expr": "door pull",
+  "answer": "handle",
+  "choice": 19
+ },
+ {
+  "cat": "microwave",
+  "part": "handle",
+  "pid": 19,
+  "type": "functional",
+  "expr": "grip you pull to open the door",
+  "answer": "handle",
+  "choice": 19
+ },
+ {
+  "cat": "microwave",
+  "part": "window",
+  "pid": 42,
+  "type": "synonym",
+  "expr": "viewing pane",
+  "answer": "window",
+  "choice": 42
+ },
+ {
+  "cat": "microwave",
+  "part": "window",
+  "pid": 42,
+  "type": "functional",
+  "expr": "lets you see food while it cooks",
+  "answer": "window",
+  "choice": 42
+ },
+ {
+  "cat": "pen",
+  "part": "lid",
+  "pid": 24,
+  "type": "synonym",
+  "expr": "cap",
+  "answer": "lid",
+  "choice": 24
+ },
+ {
+  "cat": "pen",
+  "part": "lid",
+  "pid": 24,
+  "type": "functional",
+  "expr": "covers the tip to prevent drying",
+  "answer": "lid",
+  "choice": 24
+ },
+ {
+  "cat": "refrigerator",
+  "part": "body",
+  "pid": 10,
+  "type": "synonym",
+  "expr": "cabinet",
+  "answer": "body",
+  "choice": 10
+ },
+ {
+  "cat": "refrigerator",
+  "part": "body",
+  "pid": 10,
+  "type": "functional",
+  "expr": "encloses the cold storage compartment",
+  "answer": "body",
+  "choice": 10
+ },
+ {
+  "cat": "refrigerator",
+  "part": "handle",
+  "pid": 19,
+  "type": "synonym",
+  "expr": "pull",
+  "answer": "handle",
+  "choice": 19
+ },
+ {
+  "cat": "refrigerator",
+  "part": "handle",
+  "pid": 19,
+  "type": "functional",
+  "expr": "gripped to swing the door open",
+  "answer": "handle",
+  "choice": 19
+ },
+ {
+  "cat": "refrigerator",
+  "part": "leg",
+  "pid": 59,
+  "type": "synonym",
+  "expr": "foot",
+  "answer": "leg",
+  "choice": 59
+ },
+ {
+  "cat": "refrigerator",
+  "part": "leg",
+  "pid": 59,
+  "type": "functional",
+  "expr": "supports the appliance off the floor",
+  "answer": "leg",
+  "choice": 59
+ },
+ {
+  "cat": "refrigerator",
+  "part": "shelf",
+  "pid": 65,
+  "type": "synonym",
+  "expr": "rack",
+  "answer": "shelf",
+  "choice": 65
+ },
+ {
+  "cat": "refrigerator",
+  "part": "shelf",
+  "pid": 65,
+  "type": "functional",
+  "expr": "holds food items inside for storage",
+  "answer": "body",
+  "choice": 10
+ },
+ {
+  "cat": "scissors",
+  "part": "blade",
+  "pid": 8,
+  "type": "synonym",
+  "expr": "cutting edge",
+  "answer": "blade",
+  "choice": 8
+ },
+ {
+  "cat": "scissors",
+  "part": "blade",
+  "pid": 8,
+  "type": "functional",
+  "expr": "slices through paper or other material",
+  "answer": "blade",
+  "choice": 8
+ },
+ {
+  "cat": "scissors",
+  "part": "body",
+  "pid": 10,
+  "type": "synonym",
+  "expr": "handle",
+  "answer": "body",
+  "choice": 10
+ },
+ {
+  "cat": "scissors",
+  "part": "body",
+  "pid": 10,
+  "type": "functional",
+  "expr": "gripped by fingers to open and close",
+  "answer": "body",
+  "choice": 10
+ },
+ {
+  "cat": "sofa",
+  "part": "armrest",
+  "pid": 1,
+  "type": "synonym",
+  "expr": "sofa arm",
+  "answer": "armrest",
+  "choice": 1
+ },
+ {
+  "cat": "sofa",
+  "part": "armrest",
+  "pid": 1,
+  "type": "functional",
+  "expr": "supports your arm while sitting",
+  "answer": "armrest",
+  "choice": 1
+ },
+ {
+  "cat": "sofa",
+  "part": "backrest",
+  "pid": 2,
+  "type": "synonym",
+  "expr": "sofa back",
+  "answer": "backrest",
+  "choice": 2
+ },
+ {
+  "cat": "sofa",
+  "part": "backrest",
+  "pid": 2,
+  "type": "functional",
+  "expr": "supports your back while sitting",
+  "answer": "backrest",
+  "choice": 2
+ },
+ {
+  "cat": "sofa",
+  "part": "base",
+  "pid": 3,
+  "type": "synonym",
+  "expr": "frame bottom",
+  "answer": "base",
+  "choice": 3
+ },
+ {
+  "cat": "sofa",
+  "part": "base",
+  "pid": 3,
+  "type": "functional",
+  "expr": "holds the sofa up off the floor",
+  "answer": "base",
+  "choice": 3
+ },
+ {
+  "cat": "sofa",
+  "part": "pillow",
+  "pid": 26,
+  "type": "synonym",
+  "expr": "throw cushion",
+  "answer": "pillow",
+  "choice": 26
+ },
+ {
+  "cat": "sofa",
+  "part": "pillow",
+  "pid": 26,
+  "type": "functional",
+  "expr": "movable soft support for extra comfort",
+  "answer": "pillow",
+  "choice": 26
+ },
+ {
+  "cat": "sofa",
+  "part": "seat",
+  "pid": 32,
+  "type": "synonym",
+  "expr": "sitting surface",
+  "answer": "seat",
+  "choice": 32
+ },
+ {
+  "cat": "sofa",
+  "part": "seat",
+  "pid": 32,
+  "type": "functional",
+  "expr": "where you sit down",
+  "answer": "seat",
+  "choice": 32
+ },
+ {
+  "cat": "stapler",
+  "part": "base",
+  "pid": 3,
+  "type": "synonym",
+  "expr": "anvil plate",
+  "answer": "base",
+  "choice": 3
+ },
+ {
+  "cat": "stapler",
+  "part": "base",
+  "pid": 3,
+  "type": "functional",
+  "expr": "rests on the desk, bends staple ends",
+  "answer": "base",
+  "choice": 3
+ },
+ {
+  "cat": "stapler",
+  "part": "body",
+  "pid": 10,
+  "type": "synonym",
+  "expr": "staple magazine",
+  "answer": "body",
+  "choice": 10
+ },
+ {
+  "cat": "stapler",
+  "part": "body",
+  "pid": 10,
+  "type": "functional",
+  "expr": "holds the loaded staples",
+  "answer": "body",
+  "choice": 10
+ },
+ {
+  "cat": "stapler",
+  "part": "handle",
+  "pid": 19,
+  "type": "synonym",
+  "expr": "top lever",
+  "answer": "handle",
+  "choice": 19
+ },
+ {
+  "cat": "stapler",
+  "part": "handle",
+  "pid": 19,
+  "type": "functional",
+  "expr": "pressed down to drive staples",
+  "answer": "handle",
+  "choice": 19
+ },
+ {
+  "cat": "stool",
+  "part": "backrest",
+  "pid": 2,
+  "type": "synonym",
+  "expr": "back support",
+  "answer": "backrest",
+  "choice": 2
+ },
+ {
+  "cat": "stool",
+  "part": "backrest",
+  "pid": 2,
+  "type": "functional",
+  "expr": "supports the sitter's back while leaning",
+  "answer": "backrest",
+  "choice": 2
+ },
+ {
+  "cat": "stool",
+  "part": "base",
+  "pid": 3,
+  "type": "synonym",
+  "expr": "legs",
+  "answer": "base",
+  "choice": 3
+ },
+ {
+  "cat": "stool",
+  "part": "base",
+  "pid": 3,
+  "type": "functional",
+  "expr": "holds the stool upright on the floor",
+  "answer": "base",
+  "choice": 3
+ },
+ {
+  "cat": "stool",
+  "part": "seat",
+  "pid": 32,
+  "type": "synonym",
+  "expr": "sitting surface",
+  "answer": "seat",
+  "choice": 32
+ },
+ {
+  "cat": "stool",
+  "part": "seat",
+  "pid": 32,
+  "type": "functional",
+  "expr": "where a person sits",
+  "answer": "seat",
+  "choice": 32
+ },
+ {
+  "cat": "suitcase",
+  "part": "body",
+  "pid": 10,
+  "type": "synonym",
+  "expr": "main case",
+  "answer": "body",
+  "choice": 10
+ },
+ {
+  "cat": "suitcase",
+  "part": "body",
+  "pid": 10,
+  "type": "functional",
+  "expr": "holds and protects packed belongings",
+  "answer": "body",
+  "choice": 10
+ },
+ {
+  "cat": "suitcase",
+  "part": "handle",
+  "pid": 19,
+  "type": "synonym",
+  "expr": "grip",
+  "answer": "handle",
+  "choice": 19
+ },
+ {
+  "cat": "suitcase",
+  "part": "handle",
+  "pid": 19,
+  "type": "functional",
+  "expr": "grasped to carry or pull luggage",
+  "answer": "handle",
+  "choice": 19
+ },
+ {
+  "cat": "suitcase",
+  "part": "leg",
+  "pid": 59,
+  "type": "synonym",
+  "expr": "foot",
+  "answer": "leg",
+  "choice": 59
+ },
+ {
+  "cat": "suitcase",
+  "part": "leg",
+  "pid": 59,
+  "type": "functional",
+  "expr": "keeps case steady when standing upright",
+  "answer": "leg",
+  "choice": 59
+ },
+ {
+  "cat": "suitcase",
+  "part": "lock",
+  "pid": 60,
+  "type": "synonym",
+  "expr": "latch",
+  "answer": "lock",
+  "choice": 60
+ },
+ {
+  "cat": "suitcase",
+  "part": "lock",
+  "pid": 60,
+  "type": "functional",
+  "expr": "secures case closed against opening",
+  "answer": "lock",
+  "choice": 60
+ },
+ {
+  "cat": "suitcase",
+  "part": "wheel",
+  "pid": 41,
+  "type": "synonym",
+  "expr": "caster",
+  "answer": "wheel",
+  "choice": 41
+ },
+ {
+  "cat": "suitcase",
+  "part": "wheel",
+  "pid": 41,
+  "type": "functional",
+  "expr": "rolls case along the ground",
+  "answer": "wheel",
+  "choice": 41
+ },
+ {
+  "cat": "toilet",
+  "part": "body",
+  "pid": 10,
+  "type": "synonym",
+  "expr": "toilet bowl",
+  "answer": "body",
+  "choice": 10
+ },
+ {
+  "cat": "toilet",
+  "part": "body",
+  "pid": 10,
+  "type": "functional",
+  "expr": "holds water and receives waste",
+  "answer": "body",
+  "choice": 10
+ },
+ {
+  "cat": "toilet",
+  "part": "lid",
+  "pid": 24,
+  "type": "synonym",
+  "expr": "toilet cover",
+  "answer": "lid",
+  "choice": 24
+ },
+ {
+  "cat": "toilet",
+  "part": "lid",
+  "pid": 24,
+  "type": "functional",
+  "expr": "closes over everything when not in use",
+  "answer": "lid",
+  "choice": 24
+ },
+ {
+  "cat": "toilet",
+  "part": "seat",
+  "pid": 32,
+  "type": "synonym",
+  "expr": "toilet ring",
+  "answer": "body",
+  "choice": 10
+ },
+ {
+  "cat": "toilet",
+  "part": "seat",
+  "pid": 32,
+  "type": "functional",
+  "expr": "where a person sits while using it",
+  "answer": "seat",
+  "choice": 32
+ },
+ {
+  "cat": "wheel_chair",
+  "part": "base",
+  "pid": 3,
+  "type": "synonym",
+  "expr": "frame",
+  "answer": "base",
+  "choice": 3
+ },
+ {
+  "cat": "wheel_chair",
+  "part": "base",
+  "pid": 3,
+  "type": "functional",
+  "expr": "supports the chair and holds wheels",
+  "answer": "base",
+  "choice": 3
+ },
+ {
+  "cat": "wheel_chair",
+  "part": "body",
+  "pid": 10,
+  "type": "synonym",
+  "expr": "seat",
+  "answer": "body",
+  "choice": 10
+ },
+ {
+  "cat": "wheel_chair",
+  "part": "body",
+  "pid": 10,
+  "type": "functional",
+  "expr": "where the user sits",
+  "answer": "body",
+  "choice": 10
+ },
+ {
+  "cat": "wheel_chair",
+  "part": "wheel",
+  "pid": 41,
+  "type": "synonym",
+  "expr": "tire",
+  "answer": "wheel",
+  "choice": 41
+ },
+ {
+  "cat": "wheel_chair",
+  "part": "wheel",
+  "pid": 41,
+  "type": "functional",
+  "expr": "rolls to move the chair",
+  "answer": "wheel",
+  "choice": 41
+ },
+ {
+  "cat": "window",
+  "part": "frame",
+  "pid": 117,
+  "type": "synonym",
+  "expr": "casing",
+  "answer": "frame",
+  "choice": 117
+ },
+ {
+  "cat": "window",
+  "part": "frame",
+  "pid": 117,
+  "type": "functional",
+  "expr": "holds the pane in place around its edges",
+  "answer": "frame",
+  "choice": 117
+ },
+ {
+  "cat": "window",
+  "part": "glass panel",
+  "pid": 45,
+  "type": "synonym",
+  "expr": "pane",
+  "answer": "glass panel",
+  "choice": 45
+ },
+ {
+  "cat": "window",
+  "part": "glass panel",
+  "pid": 45,
+  "type": "functional",
+  "expr": "lets light in and allows seeing through",
+  "answer": "glass panel",
+  "choice": 45
+ },
+ {
+  "cat": "window",
+  "part": "handle",
+  "pid": 19,
+  "type": "synonym",
+  "expr": "latch grip",
+  "answer": "handle",
+  "choice": 19
+ },
+ {
+  "cat": "window",
+  "part": "handle",
+  "pid": 19,
+  "type": "functional",
+  "expr": "grasped to open or close the sash",
+  "answer": "handle",
+  "choice": 19
+ }
+]

@@ -1,0 +1,129 @@
+{
+ "categories": {
+  "bar_stool": "stool",
+  "bottle": "bottle",
+  "bucket": "bucket",
+  "cap_pen": "pen",
+  "ceiling_fan": "fan",
+  "chest_of_drawers": "dresser",
+  "dishwasher": "dishwasher",
+  "door": "door",
+  "dumpster": "garbage_bin",
+  "electric_fan": "fan",
+  "floor_clock": "clock",
+  "floor_lamp": "lamp",
+  "lidded_bin": "garbage_bin",
+  "microwave": "microwave",
+  "pedal_bin": "garbage_bin",
+  "recliner_chair": "chair",
+  "refrigerator": "refrigerator",
+  "scissors": "scissors",
+  "stapler": "stapler",
+  "suitcase": "suitcase",
+  "swivel_chair": "chair",
+  "table_lamp": "lamp",
+  "tabletop_clock": "clock",
+  "toilet": "toilet",
+  "wall_clock": "clock",
+  "wheelchair": "wheel_chair",
+  "window": "window"
+ },
+ "parts": {
+  "bar_stool": {
+   "seat": "seat",
+   "backrest": "backrest"
+  },
+  "bottle": {
+   "cap": "lid"
+  },
+  "bucket": {
+   "handle": "handle"
+  },
+  "cap_pen": {
+   "cap": "lid"
+  },
+  "ceiling_fan": {
+   "blade": "blade"
+  },
+  "chest_of_drawers": {
+   "handle": "handle"
+  },
+  "dishwasher": {
+   "handle": "handle"
+  },
+  "door": {
+   "handle": "handle"
+  },
+  "dumpster": {
+   "lid": "lid",
+   "handle": "handle"
+  },
+  "electric_fan": {
+   "blade": "blade"
+  },
+  "floor_clock": {
+   "hour_hand": "clock hand",
+   "minute_hand": "clock hand",
+   "second_hand": "clock hand"
+  },
+  "floor_lamp": {
+   "shade": "lamp cover",
+   "lightbulb": "bulb"
+  },
+  "lidded_bin": {
+   "handle": "handle"
+  },
+  "microwave": {
+   "handle": "handle"
+  },
+  "pedal_bin": {
+   "lid": "lid",
+   "handle": "handle"
+  },
+  "recliner_chair": {
+   "backrest": "backrest"
+  },
+  "refrigerator": {
+   "handle": "handle",
+   "shelf": "shelf"
+  },
+  "scissors": {
+   "blade": "blade"
+  },
+  "stapler": {
+   "handle": "handle"
+  },
+  "suitcase": {
+   "handle": "handle",
+   "wheel": "wheel"
+  },
+  "swivel_chair": {
+   "seat": "seat",
+   "backrest": "backrest"
+  },
+  "table_lamp": {
+   "shade": "lamp cover",
+   "lightbulb": "bulb"
+  },
+  "tabletop_clock": {
+   "hour_hand": "clock hand",
+   "minute_hand": "clock hand",
+   "second_hand": "clock hand"
+  },
+  "toilet": {
+   "seat": "seat",
+   "lid": "lid"
+  },
+  "wall_clock": {
+   "hour_hand": "clock hand",
+   "minute_hand": "clock hand",
+   "second_hand": "clock hand"
+  },
+  "wheelchair": {
+   "wheel": "wheel"
+  },
+  "window": {
+   "handle": "handle"
+  }
+ }
+}

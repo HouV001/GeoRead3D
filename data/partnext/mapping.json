@@ -1,0 +1,19 @@
+{
+ "categories": {
+  "Chair": "chair",
+  "Sofa": "sofa"
+ },
+ "parts": {
+  "Chair": {
+   "Seat@1": "seat",
+   "Backrest@1": "backrest",
+   "Base@1": "base"
+  },
+  "Sofa": {
+   "Backrest@1": "backrest",
+   "Armrest@1": "armrest",
+   "Throw Pillow@1": "pillow",
+   "Seat Cushion@2": "seat"
+  }
+ }
+}

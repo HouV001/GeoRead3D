@@ -1,0 +1,409 @@
+{
+ "categories": {
+  "bottle": {
+   "id": 50,
+   "parts": [
+    [
+     10,
+     "body"
+    ],
+    [
+     24,
+     "lid"
+    ],
+    [
+     54,
+     "stripe"
+    ],
+    [
+     19,
+     "handle"
+    ],
+    [
+     55,
+     "straw"
+    ]
+   ]
+  },
+  "bucket": {
+   "id": 53,
+   "parts": [
+    [
+     10,
+     "body"
+    ],
+    [
+     19,
+     "handle"
+    ],
+    [
+     3,
+     "base"
+    ],
+    [
+     24,
+     "lid"
+    ]
+   ]
+  },
+  "chair": {
+   "id": 12,
+   "parts": [
+    [
+     2,
+     "backrest"
+    ],
+    [
+     32,
+     "seat"
+    ],
+    [
+     26,
+     "pillow"
+    ],
+    [
+     3,
+     "base"
+    ]
+   ]
+  },
+  "clock": {
+   "id": 13,
+   "parts": [
+    [
+     14,
+     "clock hand"
+    ],
+    [
+     10,
+     "body"
+    ]
+   ]
+  },
+  "dishwasher": {
+   "id": 16,
+   "parts": [
+    [
+     40,
+     "vertical panel"
+    ],
+    [
+     21,
+     "horizontal panel"
+    ],
+    [
+     19,
+     "handle"
+    ],
+    [
+     3,
+     "base"
+    ]
+   ]
+  },
+  "door": {
+   "id": 73,
+   "parts": [
+    [
+     10,
+     "body"
+    ],
+    [
+     19,
+     "handle"
+    ],
+    [
+     60,
+     "lock"
+    ],
+    [
+     66,
+     "stopper"
+    ]
+   ]
+  },
+  "dresser": {
+   "id": 17,
+   "parts": [
+    [
+     40,
+     "vertical panel"
+    ],
+    [
+     21,
+     "horizontal panel"
+    ],
+    [
+     19,
+     "handle"
+    ],
+    [
+     3,
+     "base"
+    ]
+   ]
+  },
+  "fan": {
+   "id": 18,
+   "parts": [
+    [
+     10,
+     "body"
+    ],
+    [
+     11,
+     "bulb"
+    ],
+    [
+     8,
+     "blade"
+    ]
+   ]
+  },
+  "garbage_bin": {
+   "id": 20,
+   "parts": [
+    [
+     10,
+     "body"
+    ],
+    [
+     24,
+     "lid"
+    ],
+    [
+     19,
+     "handle"
+    ],
+    [
+     3,
+     "base"
+    ]
+   ]
+  },
+  "lamp": {
+   "id": 24,
+   "parts": [
+    [
+     23,
+     "lamp cover"
+    ],
+    [
+     11,
+     "bulb"
+    ],
+    [
+     3,
+     "base"
+    ]
+   ]
+  },
+  "microwave": {
+   "id": 126,
+   "parts": [
+    [
+     10,
+     "body"
+    ],
+    [
+     42,
+     "window"
+    ],
+    [
+     19,
+     "handle"
+    ]
+   ]
+  },
+  "pen": {
+   "id": 134,
+   "parts": [
+    [
+     10,
+     "body"
+    ],
+    [
+     24,
+     "lid"
+    ]
+   ]
+  },
+  "refrigerator": {
+   "id": 144,
+   "parts": [
+    [
+     10,
+     "body"
+    ],
+    [
+     59,
+     "leg"
+    ],
+    [
+     65,
+     "shelf"
+    ],
+    [
+     19,
+     "handle"
+    ],
+    [
+     45,
+     "glass panel"
+    ]
+   ]
+  },
+  "scissors": {
+   "id": 149,
+   "parts": [
+    [
+     8,
+     "blade"
+    ],
+    [
+     10,
+     "body"
+    ]
+   ]
+  },
+  "sofa": {
+   "id": 33,
+   "parts": [
+    [
+     32,
+     "seat"
+    ],
+    [
+     2,
+     "backrest"
+    ],
+    [
+     1,
+     "armrest"
+    ],
+    [
+     26,
+     "pillow"
+    ],
+    [
+     3,
+     "base"
+    ]
+   ]
+  },
+  "stapler": {
+   "id": 166,
+   "parts": [
+    [
+     19,
+     "handle"
+    ],
+    [
+     10,
+     "body"
+    ],
+    [
+     3,
+     "base"
+    ]
+   ]
+  },
+  "stool": {
+   "id": 35,
+   "parts": [
+    [
+     2,
+     "backrest"
+    ],
+    [
+     32,
+     "seat"
+    ],
+    [
+     3,
+     "base"
+    ]
+   ]
+  },
+  "suitcase": {
+   "id": 170,
+   "parts": [
+    [
+     19,
+     "handle"
+    ],
+    [
+     60,
+     "lock"
+    ],
+    [
+     10,
+     "body"
+    ],
+    [
+     59,
+     "leg"
+    ],
+    [
+     41,
+     "wheel"
+    ]
+   ]
+  },
+  "toilet": {
+   "id": 38,
+   "parts": [
+    [
+     10,
+     "body"
+    ],
+    [
+     32,
+     "seat"
+    ],
+    [
+     24,
+     "lid"
+    ]
+   ]
+  },
+  "wheel_chair": {
+   "id": 195,
+   "parts": [
+    [
+     3,
+     "base"
+    ],
+    [
+     10,
+     "body"
+    ],
+    [
+     41,
+     "wheel"
+    ]
+   ]
+  },
+  "window": {
+   "id": 198,
+   "parts": [
+    [
+     117,
+     "frame"
+    ],
+    [
+     45,
+     "glass panel"
+    ],
+    [
+     19,
+     "handle"
+    ],
+    [
+     66,
+     "stopper"
+    ]
+   ]
+  }
+ }
+}
