@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GeoRead3D: Grounding Part Descriptions for 3D Pointing and Reorientation</title>
+  <meta name="description" content="Official project page for GeoRead3D. Point evidence whose weighted centroid locates a described part, trained with Geometric Readout Supervision (GRS), for pointing to parts and reorienting 3D objects from language.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="GeoRead3D — Grounding Part Descriptions for 3D Pointing and Reorientation">
+  <meta property="og:description" content="Learning point evidence through the position and direction of its weighted centroid, rather than mask overlap alone. Highest pointing and reorientation success on PartNeXt and Artiverse among the evaluated methods.">
+  <meta property="og:image" content="assets/georead3d_overview.png">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1.9.4/css/academicons.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@500;700&family=Noto+Sans:wght@400;500&family=JetBrains+Mono&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --accent: #2b4a8b;
+      --accent-dark: #1f3a72;
+      --muted: #6b7280;
+    }
+    html, body { font-family: 'Noto Sans', system-ui, -apple-system, sans-serif; color: #1f2937; }
+    h1, h2, h3, .title, .subtitle { font-family: 'Google Sans', 'Noto Sans', sans-serif; }
+    code, pre { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+
+    .hero-body { padding: 3.5rem 1.5rem 2.5rem; }
+    .publication-title { font-weight: 700; line-height: 1.25; }
+    .author-block { margin: 0 0.4rem; white-space: nowrap; }
+    .author-block sup { color: var(--accent); }
+    .affiliation-block { color: var(--muted); margin: 0 0.4rem; }
+    .venue-tag {
+      display: inline-block; background: #eef2f7; color: var(--accent-dark);
+      border-radius: 9999px; padding: 0.2rem 0.9rem; font-weight: 500; font-size: 0.85rem;
+      letter-spacing: 0.04em; margin-bottom: 1.5rem;
+    }
+    .link-buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.6rem; margin-top: 1.6rem; }
+    .link-buttons .button {
+      background: #1f2937; color: #fff; border-radius: 9999px; padding: 0.55rem 1.2rem; font-weight: 500;
+    }
+    .link-buttons .button:hover { background: var(--accent); color: #fff; }
+    .link-buttons .button .icon { margin-right: 0.4rem; }
+
+    section { padding: 2.5rem 0; }
+    section.has-background-light { background: #f8f9fb !important; }
+    .section-title { font-size: 1.9rem; font-weight: 700; margin-bottom: 1.5rem; text-align: center; }
+    .section-title:after {
+      content: ""; display: block; width: 3rem; height: 3px; background: var(--accent);
+      margin: 0.6rem auto 0; border-radius: 2px;
+    }
+    .section-lead { max-width: 760px; margin: 0 auto 1.5rem; line-height: 1.7; }
+
+    .figure-block { text-align: center; }
+    .figure-block img { max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 18px rgba(0,0,0,0.06); }
+    .figure-block.narrow img { max-width: 560px; width: 100%; }
+    .figure-caption { color: var(--muted); font-size: 0.9rem; margin-top: 0.9rem; text-align: left; }
+    .figure-caption b { color: #1f2937; }
+
+    .abstract p { text-align: justify; font-size: 1.05rem; line-height: 1.7; }
+
+    .results-table { margin: 0 auto; max-width: 720px; }
+    .results-table table { background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+    .results-table th { background: var(--accent); color: #fff; font-weight: 500; }
+    .results-table td.best { font-weight: 700; color: var(--accent-dark); }
+
+    /* Wide comparison table: scrolls sideways on small screens */
+    .results-table.wide { max-width: 100%; overflow-x: auto; }
+    .results-table.wide table { font-size: 0.8rem; white-space: nowrap; }
+    .results-table.wide th, .results-table.wide td { padding: 0.4em 0.5em; vertical-align: middle; }
+    .results-table th.group { text-align: center; border-bottom: 1px solid rgba(255,255,255,0.35); }
+    .results-table td.num, .results-table th.num { text-align: right; }
+    .results-table tr.group-start td { border-top: 2px solid #d1d5db; }
+    .results-table tr.ours td { background: #eef2f7; }
+    .results-table .std { color: var(--muted); font-size: 0.85em; }
+    .results-table td.best .std { color: var(--accent-dark); font-weight: 500; }
+    .results-table .venue { color: var(--muted); font-size: 0.9em; }
+
+    .bibtex { background: #1f2937; color: #f3f4f6; border-radius: 8px; padding: 1.2rem 1.4rem; font-size: 0.9rem; overflow-x: auto; }
+    .bibtex .copy-btn {
+      float: right; background: #374151; color: #f3f4f6; border: none; border-radius: 4px;
+      padding: 0.3rem 0.7rem; font-size: 0.8rem; cursor: pointer;
+    }
+    .bibtex .copy-btn:hover { background: var(--accent); }
+
+    footer { text-align: center; padding: 2rem 1rem; color: var(--muted); font-size: 0.85rem; border-top: 1px solid #e5e7eb; }
+    footer a { color: var(--accent-dark); }
+  </style>
+</head>
+
+<body>
+
+<!-- ====================================================================
+     HERO
+==================================================================== -->
+<section class="hero">
+  <div class="hero-body has-text-centered">
+    <div class="container is-max-desktop">
+      <div class="venue-tag">arXiv preprint</div>
+      <h1 class="title is-2 publication-title">
+        GeoRead3D: Grounding Part Descriptions for 3D Pointing and Reorientation
+      </h1>
+      <div class="is-size-5 mt-4">
+        <span class="author-block">Zhangcheng Hou<sup>1</sup></span>
+        <span class="author-block">Kevin Tonkich<sup>1</sup></span>
+        <span class="author-block">Tomoaki Ohtsuki<sup>1</sup></span>
+      </div>
+      <div class="is-size-6 mt-2">
+        <span class="affiliation-block"><sup>1</sup>Keio University, Yokohama, Japan</span>
+      </div>
+
+      <div class="link-buttons">
+        <a class="button" href="https://arxiv.org/abs/2611.30519" target="_blank" rel="noopener">
+          <span class="icon"><i class="ai ai-arxiv"></i></span><span>arXiv</span>
+        </a>
+        <a class="button" href="https://github.com/HouV001/GeoRead3D" target="_blank" rel="noopener">
+          <span class="icon"><i class="fab fa-github"></i></span><span>Code</span>
+        </a>
+        <a class="button" href="https://drive.google.com/file/d/1qa1GuWiE9kePJItdY_3BSYPTHgzv9zw0/view?usp=drive_link" target="_blank" rel="noopener">
+          <span class="icon"><i class="fas fa-cube"></i></span><span>Checkpoints</span>
+        </a>
+        <a class="button" href="https://houzhangcheng.com" target="_blank" rel="noopener">
+          <span class="icon"><i class="fas fa-house"></i></span><span>Homepage</span>
+        </a>
+        <a class="button" href="#bibtex">
+          <span class="icon"><i class="fas fa-quote-left"></i></span><span>BibTeX</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================================
+     OVERVIEW
+==================================================================== -->
+<section>
+  <div class="container is-max-desktop">
+    <div class="figure-block">
+      <img src="assets/georead3d_overview.png" alt="GeoRead3D overview: an LLM mapper turns part descriptions of a chair into the part names seat and base; point evidence on the colored point cloud gives a weighted centroid, which is used for pointing and for two-anchor reorientation. During training, Geometric Readout Supervision supervises the centroid's position and direction; with GRS the direction error drops from 25 to 5 degrees.">
+      <p class="figure-caption">
+        <b>Learning part evidence for pointing and reorientation with GRS.</b>
+        A language model maps each part description to a known part name. The weighted centroid of the point evidence, relative to the object center, gives each part's direction for both tasks: pointing to a part, and two-anchor reorientation, which turns the object so that two named parts lie in commanded directions.
+        During training, <b>Geometric Readout Supervision (GRS)</b> supervises the centroid's position and direction. In the matched heads on frozen Utonia features shown here, the evidence trained with GRS covers the part more accurately and its centroid points closer to the true direction than with the mask loss alone (25&deg; &rarr; 5&deg;).
+        Dashed arrows show true or commanded directions and solid arrows predicted ones; white circles mark true part centers and dark dots the weighted centroids.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================================
+     ABSTRACT
+==================================================================== -->
+<section class="has-background-light">
+  <div class="container is-max-desktop">
+    <h2 class="section-title">Abstract</h2>
+    <div class="abstract">
+      <p>
+        Language often refers to an object by its parts, as in asking to point to a part or to turn an arbitrarily posed object so that two named parts lie in given directions. Both tasks need the direction from the object's center to the part's center, not the part's own orientation. A natural approach segments the part and takes the centroid of its mask. However, high mask overlap predicts the pointing direction poorly when a part is spread out relative to its distance from the object center. Language-guided part segmentation is trained and evaluated by mask overlap, which leaves a gap between the masks it produces and the part geometry that these tasks use.
+      </p>
+      <p>
+        We close this gap by learning <strong>point evidence</strong>, weights over the observed points whose weighted centroid gives the part's location. <strong>Geometric Readout Supervision (GRS)</strong> trains these weights through the centroid's position and adds direction supervision on the parts used in reorientation commands. GRS improves both tasks even with a single frozen encoder and a single input pose. We implement this supervision in <strong>GeoRead3D</strong>, a system for pointing and reorientation from part descriptions. A language model maps each description to a known part name. <strong>Dual-Route Part Evidence</strong> combines refined segmentation evidence with directly predicted point evidence to locate each part.
+      </p>
+      <p>
+        On PartNeXt and Artiverse, GeoRead3D points within 22.5&deg; for <strong>74.1%</strong> and <strong>60.0%</strong> of queries, 5.8 and 7.3 percentage points above the strongest baselines. Its reorientation success exceeds the strongest baselines by 10.4 and 7.8 points.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================================
+     KEY IDEAS
+==================================================================== -->
+<section>
+  <div class="container is-max-desktop">
+    <h2 class="section-title">Key ideas</h2>
+    <div class="columns">
+      <div class="column">
+        <h3 class="title is-5">1. Read out the part, not the mask</h3>
+        <p>
+          Pointing and two-anchor reorientation both use the direction from the object's center to the part's center. A few misplaced points can shift a mask's centroid even when its overlap with the part is high. GeoRead3D instead predicts <em>point evidence</em> &mdash; query-conditioned weights over the input points &mdash; and reads out the part's location as their weighted centroid.
+        </p>
+      </div>
+      <div class="column">
+        <h3 class="title is-5">2. Geometric Readout Supervision</h3>
+        <p>
+          GRS trains the evidence through its readout: a position term on the centroid of every queried part, and a direction term on the parts that can anchor a reorientation command. With one frozen encoder and one input pose, it raises pointing by 5.1&ndash;7.0 points and reorientation by 4.8&ndash;12.7 points over mask supervision alone.
+        </p>
+      </div>
+      <div class="column">
+        <h3 class="title is-5">3. Dual-Route Part Evidence</h3>
+        <p>
+          A refinement route corrects a frozen Point-BERT segmenter's evidence with a Part Localization Refiner (PLR) and a query gate; a direct route predicts evidence from frozen Utonia features. Both weight the same input points, so their evidence is averaged across routes and four rotated copies of the input before a single readout per part.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================================
+     METHOD
+==================================================================== -->
+<section class="has-background-light">
+  <div class="container is-max-desktop">
+    <h2 class="section-title">Method</h2>
+    <div class="figure-block">
+      <img src="assets/georead3d_method.png" alt="GeoRead3D method: (a) refinement route with a frozen Point-BERT encoder, segmenter, Part Localization Refiner and query gate; (b) direct route with a frozen Utonia encoder and an evidence head; (c) evidence fusion over two routes and four rotated copies, then a single readout; (d) Geometric Readout Supervision with position and direction terms, used during training only.">
+      <p class="figure-caption">
+        <b>Dual-Route Part Evidence with GRS.</b>
+        <b>(a) Refinement route.</b> A segmenter on frozen Point-BERT features predicts group evidence; the Part Localization Refiner (PLR) corrects it for localization and a query gate filters points.
+        <b>(b) Direct route.</b> An evidence head predicts point evidence from frozen Utonia features.
+        <b>(c) Evidence fusion and readout.</b> Evidence from both routes and four rotated copies of the input (the input pose plus three seeded rotations) is averaged per point and read out once.
+        <b>(d) Geometric Readout Supervision.</b> During training, GRS supervises position on every queried part and direction on both parts of each anchor pair &mdash; two queried parts of one object whose true directions are 30&deg;&ndash;150&deg; apart.
+        Heatmaps show evidence for the lens of a held-out 3DCoMPaT microscope.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================================
+     RESULTS
+==================================================================== -->
+<section>
+  <div class="container is-max-desktop">
+    <h2 class="section-title">Comparison with prior methods</h2>
+    <div class="results-table wide">
+      <table class="table is-fullwidth">
+        <thead>
+          <tr>
+            <th rowspan="2">Method</th>
+            <th rowspan="2">Variant</th>
+            <th class="group" colspan="4">PartNeXt test split</th>
+            <th class="group" colspan="4">Artiverse</th>
+            <th class="num" rowspan="2">Params</th>
+            <th class="num" rowspan="2">Time (ms)</th>
+          </tr>
+          <tr>
+            <th class="num">Point. &uarr;</th>
+            <th class="num">Reorient. &uarr;</th>
+            <th class="num">Whole &uarr;</th>
+            <th class="num">Severe &darr;</th>
+            <th class="num">Point. &uarr;</th>
+            <th class="num">Reorient. &uarr;</th>
+            <th class="num">Whole &uarr;</th>
+            <th class="num">Severe &darr;</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>COPS <span class="venue">(WACV'25)</span></td><td>Released</td><td class="num">18.5</td><td class="num">6.4</td><td class="num">5.7</td><td class="num">50.8</td><td class="num">14.8</td><td class="num">3.7</td><td class="num">3.2</td><td class="num">54.7</td><td class="num">236.2M</td><td class="num">712</td></tr>
+          <tr><td>Find3D <span class="venue">(ICCV'25)</span></td><td>Released</td><td class="num">38.4</td><td class="num">26.0</td><td class="num">23.0</td><td class="num">23.0</td><td class="num">26.5</td><td class="num">13.3</td><td class="num">11.1</td><td class="num">33.7</td><td class="num">46.2M</td><td class="num">282</td></tr>
+          <tr><td>CoSMo3D <span class="venue">(CVPR'26)</span></td><td>Released</td><td class="num">41.8</td><td class="num">27.7</td><td class="num">23.6</td><td class="num">19.6</td><td class="num">37.2</td><td class="num">16.6</td><td class="num">14.1</td><td class="num">26.3</td><td class="num">57.5M</td><td class="num">251</td></tr>
+          <tr><td>PatchAlign3D <span class="venue">(CVPR'26)</span></td><td>Released</td><td class="num">45.5</td><td class="num">33.4</td><td class="num">29.7</td><td class="num">19.3</td><td class="num">29.7</td><td class="num">18.3</td><td class="num">16.4</td><td class="num">37.6</td><td class="num">22.4M</td><td class="num">57</td></tr>
+          <tr class="group-start"><td>Point-BERT <span class="venue">(CVPR'22)</span></td><td>Frozen + mask head</td><td class="num">64.7 <span class="std">&plusmn;1.1</span></td><td class="num">53.8 <span class="std">&plusmn;1.8</span></td><td class="num">48.2 <span class="std">&plusmn;1.8</span></td><td class="num">5.8 <span class="std">&plusmn;0.5</span></td><td class="num">52.5 <span class="std">&plusmn;0.9</span></td><td class="num">27.1 <span class="std">&plusmn;0.6</span></td><td class="num">24.9 <span class="std">&plusmn;0.4</span></td><td class="num">16.5 <span class="std">&plusmn;0.1</span></td><td class="num">22.1M</td><td class="num">140</td></tr>
+          <tr><td>Find3D <span class="venue">(ICCV'25)</span></td><td>Frozen + mask head</td><td class="num">39.2 <span class="std">&plusmn;0.8</span></td><td class="num">26.8 <span class="std">&plusmn;0.8</span></td><td class="num">23.8 <span class="std">&plusmn;0.7</span></td><td class="num">23.5 <span class="std">&plusmn;1.0</span></td><td class="num">33.2 <span class="std">&plusmn;0.3</span></td><td class="num">7.6 <span class="std">&plusmn;1.0</span></td><td class="num">6.5 <span class="std">&plusmn;1.3</span></td><td class="num">30.9 <span class="std">&plusmn;0.4</span></td><td class="num">46.7M</td><td class="num">252</td></tr>
+          <tr><td>PatchAlign3D <span class="venue">(CVPR'26)</span></td><td>Frozen + mask head</td><td class="num">51.5 <span class="std">&plusmn;0.9</span></td><td class="num">37.1 <span class="std">&plusmn;1.4</span></td><td class="num">31.7 <span class="std">&plusmn;1.8</span></td><td class="num">9.6 <span class="std">&plusmn;0.3</span></td><td class="num">37.9 <span class="std">&plusmn;0.4</span></td><td class="num">17.8 <span class="std">&plusmn;1.7</span></td><td class="num">16.6 <span class="std">&plusmn;1.4</span></td><td class="num">30.9 <span class="std">&plusmn;0.3</span></td><td class="num">23.1M</td><td class="num">46</td></tr>
+          <tr><td>Utonia <span class="venue">(ICML'26)</span></td><td>Frozen + mask head</td><td class="num">68.4 <span class="std">&plusmn;1.0</span></td><td class="num">60.8 <span class="std">&plusmn;1.6</span></td><td class="num">54.0 <span class="std">&plusmn;1.3</span></td><td class="num">4.2 <span class="std">&plusmn;0.2</span></td><td class="num">51.0 <span class="std">&plusmn;0.8</span></td><td class="num">25.0 <span class="std">&plusmn;1.4</span></td><td class="num">23.2 <span class="std">&plusmn;1.1</span></td><td class="num">18.4 <span class="std">&plusmn;0.6</span></td><td class="num">138.0M</td><td class="num">147</td></tr>
+          <tr class="group-start"><td>Point-BERT <span class="venue">(CVPR'22)</span></td><td>Fine-tuned</td><td class="num">67.8 <span class="std">&plusmn;0.3</span></td><td class="num">59.5 <span class="std">&plusmn;1.0</span></td><td class="num">54.2 <span class="std">&plusmn;0.9</span></td><td class="num">6.7 <span class="std">&plusmn;0.2</span></td><td class="num">52.7 <span class="std">&plusmn;0.4</span></td><td class="num">24.4 <span class="std">&plusmn;0.8</span></td><td class="num">22.8 <span class="std">&plusmn;0.5</span></td><td class="num">17.9 <span class="std">&plusmn;0.7</span></td><td class="num">22.1M</td><td class="num">41</td></tr>
+          <tr><td>PointNeXt-S <span class="venue">(NeurIPS'22)</span></td><td>From scratch</td><td class="num">43.3 <span class="std">&plusmn;1.0</span></td><td class="num">30.8 <span class="std">&plusmn;0.8</span></td><td class="num">27.4 <span class="std">&plusmn;0.9</span></td><td class="num">16.8 <span class="std">&plusmn;0.6</span></td><td class="num">37.1 <span class="std">&plusmn;1.0</span></td><td class="num">16.3 <span class="std">&plusmn;0.7</span></td><td class="num">15.3 <span class="std">&plusmn;1.2</span></td><td class="num">30.7 <span class="std">&plusmn;0.9</span></td><td class="num">22.6M</td><td class="num">52</td></tr>
+          <tr><td>PointLLM-7B <span class="venue">(ECCV'24)</span></td><td>Fine-tuned</td><td class="num">53.6 <span class="std">&plusmn;1.2</span></td><td class="num">40.8 <span class="std">&plusmn;1.5</span></td><td class="num">36.6 <span class="std">&plusmn;1.5</span></td><td class="num">10.2 <span class="std">&plusmn;0.8</span></td><td class="num">49.1 <span class="std">&plusmn;1.0</span></td><td class="num">20.7 <span class="std">&plusmn;1.4</span></td><td class="num">18.1 <span class="std">&plusmn;0.7</span></td><td class="num">18.0 <span class="std">&plusmn;1.3</span></td><td class="num">6.78B</td><td class="num">483</td></tr>
+          <tr><td>Utonia <span class="venue">(ICML'26)</span></td><td>Fine-tuned</td><td class="num">63.6 <span class="std">&plusmn;1.7</span></td><td class="num">55.8 <span class="std">&plusmn;2.6</span></td><td class="num">50.6 <span class="std">&plusmn;2.4</span></td><td class="num">7.6 <span class="std">&plusmn;0.6</span></td><td class="num">44.1 <span class="std">&plusmn;1.4</span></td><td class="num">21.3 <span class="std">&plusmn;1.7</span></td><td class="num">19.8 <span class="std">&plusmn;1.8</span></td><td class="num">23.8 <span class="std">&plusmn;0.8</span></td><td class="num">137.6M</td><td class="num">159</td></tr>
+          <tr class="group-start ours"><td><strong>GeoRead3D (ours)</strong></td><td>&mdash;</td><td class="num best">74.1 <span class="std">&plusmn;0.4</span></td><td class="num best">71.2 <span class="std">&plusmn;0.3</span></td><td class="num best">65.3 <span class="std">&plusmn;0.4</span></td><td class="num best">3.0 <span class="std">&plusmn;0.1</span></td><td class="num best">60.0 <span class="std">&plusmn;0.8</span></td><td class="num best">34.9 <span class="std">&plusmn;2.7</span></td><td class="num best">32.2 <span class="std">&plusmn;2.3</span></td><td class="num best">12.7 <span class="std">&plusmn;0.8</span></td><td class="num">160.6M</td><td class="num">307</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="figure-caption">
+      Success and severe error rates in percent on rotated input, with a shared language-model mapper and four poses (one pose for COPS). <b>Point.</b>: pointing within 22.5&deg;; <b>Reorient.</b>: both anchor parts within 30&deg; of their commanded directions; <b>Whole</b>: whole-object rotation within 30&deg;; <b>Severe</b>: pointing errors above 90&deg;. Trained rows give the mean &plusmn; standard deviation over three seeds, and bold marks the best mean. Params counts the networks run at inference, excluding cached text embeddings and the shared mapper; Time is the median latency per object on one GPU. All trained modules and baselines use the 14,350 training shapes of 3DCoMPaT; the PartNeXt test split holds 4,496 chair and sofa shapes, and the Artiverse sample covers 1,708 shapes from 20 categories.
+    </p>
+
+    <h2 class="section-title" style="margin-top: 3rem;">GRS with one encoder and one pose</h2>
+    <p class="section-lead">
+      To separate the effect of the supervision from the dual-route system, the same frozen encoder and evidence head are trained with mask supervision alone or with full GRS, and evaluated on a single input pose with correct part names.
+    </p>
+    <div class="results-table">
+      <table class="table is-fullwidth">
+        <thead>
+          <tr>
+            <th rowspan="2">Encoder (frozen + head)</th>
+            <th rowspan="2">Objective</th>
+            <th class="group" colspan="2">PartNeXt test split</th>
+            <th class="group" colspan="2">Artiverse</th>
+          </tr>
+          <tr>
+            <th class="num">Point. &uarr;</th>
+            <th class="num">Reorient. &uarr;</th>
+            <th class="num">Point. &uarr;</th>
+            <th class="num">Reorient. &uarr;</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td rowspan="3">Utonia <span class="venue">(ICML'26)</span></td><td>Mask</td><td class="num">62.7 <span class="std">&plusmn;0.8</span></td><td class="num">52.1 <span class="std">&plusmn;0.7</span></td><td class="num">47.9 <span class="std">&plusmn;0.4</span></td><td class="num">20.8 <span class="std">&plusmn;1.0</span></td></tr>
+          <tr><td>Full GRS</td><td class="num">67.8 <span class="std">&plusmn;0.4</span></td><td class="num">61.2 <span class="std">&plusmn;0.8</span></td><td class="num">54.7 <span class="std">&plusmn;0.5</span></td><td class="num">25.6 <span class="std">&plusmn;0.6</span></td></tr>
+          <tr><td>&Delta;</td><td class="num best">+5.1 <span class="std">&plusmn;0.9</span></td><td class="num best">+9.2 <span class="std">&plusmn;1.5</span></td><td class="num best">+6.9 <span class="std">&plusmn;0.9</span></td><td class="num best">+4.8 <span class="std">&plusmn;0.8</span></td></tr>
+          <tr class="group-start"><td rowspan="3">Point-BERT <span class="venue">(CVPR'22)</span></td><td>Mask</td><td class="num">62.3 <span class="std">&plusmn;1.1</span></td><td class="num">49.9 <span class="std">&plusmn;1.4</span></td><td class="num">50.4 <span class="std">&plusmn;0.8</span></td><td class="num">23.6 <span class="std">&plusmn;0.9</span></td></tr>
+          <tr><td>Full GRS</td><td class="num">69.3 <span class="std">&plusmn;0.4</span></td><td class="num">62.6 <span class="std">&plusmn;0.9</span></td><td class="num">56.0 <span class="std">&plusmn;1.5</span></td><td class="num">31.7 <span class="std">&plusmn;5.3</span></td></tr>
+          <tr><td>&Delta;</td><td class="num best">+7.0 <span class="std">&plusmn;0.9</span></td><td class="num best">+12.7 <span class="std">&plusmn;0.5</span></td><td class="num best">+5.6 <span class="std">&plusmn;2.2</span></td><td class="num best">+8.1 <span class="std">&plusmn;5.6</span></td></tr>
+        </tbody>
+      </table>
+      <p class="figure-caption" style="text-align:center; margin-top:0.6rem;">
+        Success rates in percent on rotated input, mean &plusmn; standard deviation over three seeds. Every gain is significant (paired bootstrap, 95% interval excluding zero), without a second evidence route or aggregation over poses.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================================
+     ANALYSIS
+==================================================================== -->
+<section class="has-background-light">
+  <div class="container is-max-desktop">
+    <h2 class="section-title">When mask overlap is not enough</h2>
+    <p class="section-lead">
+      Parts are grouped by &kappa;, the part's spread divided by its distance from the object center. Below &kappa;&nbsp;=&nbsp;1, nearly every mask with IoU &ge; 0.5 points correctly; from &kappa;&nbsp;=&nbsp;2 upward, a quarter to a half of them fail, for every head and both encoders on both datasets. High overlap does not ensure an accurate direction when a part is spread out relative to its offset from the center.
+    </p>
+    <div class="figure-block narrow">
+      <img src="assets/georead3d_kappa.png" alt="Pointing failures among masks with IoU at least 0.5, grouped by kappa, on PartNeXt and Artiverse for mask, position and full GRS heads on Utonia and Point-BERT; failures rise sharply for kappa of 2 or more. Below, two PartNeXt examples compare the evidence of the mask, position and full GRS heads.">
+      <p class="figure-caption">
+        <b>Mask overlap and pointing by part geometry.</b>
+        <b>(a, b)</b> Pointing failures among masks with IoU &ge; 0.5, grouped by &kappa;, for heads on frozen encoders (input pose and correct part names, with 95% intervals and <i>n</i> queries per group).
+        <b>(c)</b> Two examples chosen by a fixed rule, with true directions dashed and readouts solid. In the improvement example, direction supervision shifts weight toward the far end of a part the mask head already covers, so the readout turns toward the true direction despite lower IoU; in the failure example, the GRS evidence spreads onto a neighboring part and pulls the readout away.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================================
+     BIBTEX
+==================================================================== -->
+<section id="bibtex">
+  <div class="container is-max-desktop">
+    <h2 class="section-title">Citation</h2>
+    <div class="bibtex">
+      <button class="copy-btn" onclick="navigator.clipboard.writeText(document.getElementById('bibtex-block').textContent); this.textContent='Copied!'; setTimeout(()=>this.textContent='Copy',1500);">Copy</button>
+<pre id="bibtex-block" style="background:transparent;color:inherit;padding:0;margin:0;">@article{hou2026georead3d,
+  title   = {GeoRead3D: Grounding Part Descriptions for 3D Pointing and Reorientation},
+  author  = {Hou, Zhangcheng and Tonkich, Kevin and Ohtsuki, Tomoaki},
+  journal = {arXiv preprint arXiv:2611.30519},
+  year    = {2026}
+}</pre>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================================
+     FOOTER
+==================================================================== -->
+<footer>
+  <p>
+    Page template adapted from <a href="https://nerfies.github.io" target="_blank" rel="noopener">Nerfies</a>.
+    Source available at <a href="https://github.com/HouV001/GeoRead3D" target="_blank" rel="noopener">HouV001/GeoRead3D</a>.
+  </p>
+</footer>
+
+</body>
+</html>
