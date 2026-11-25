@@ -10,12 +10,23 @@ This repository contains the final GeoRead3D model, the scripts that train each 
 
 ## Results
 
-Success and severe error rates in percent on rotated input, mean ± standard deviation over three seeds (Table 1 of the paper).
+**Table 1. Comparison with prior methods on the PartNeXt test split and Artiverse.** Success and severe error rates in percent on rotated input with the shared mapper and four poses, or one pose for COPS. Point.: pointing within 22.5°; Reorient.: reorientation within 30°; Whole: whole-object rotation within 30°; Severe: pointing errors above 90°. Trained rows give the mean ± standard deviation over three seeds, and bold marks the best mean. Params counts the networks run at inference, excluding cached text embeddings and the shared mapper. Time is the median latency per object on one GPU.
 
-| Dataset | Pointing (≤ 22.5°) | Reorientation (≤ 30°) | Whole-object rotation (≤ 30°) | Severe errors (> 90°) |
-|---|---|---|---|---|
-| PartNeXt test split | 74.1 ± 0.4 | 71.2 ± 0.3 | 65.3 ± 0.4 | 3.0 ± 0.1 |
-| Artiverse | 60.0 ± 0.8 | 34.9 ± 2.7 | 32.2 ± 2.3 | 12.7 ± 0.8 |
+| Method | Variant | PartNeXt Point. | PartNeXt Reorient. | PartNeXt Whole | PartNeXt Severe | Artiverse Point. | Artiverse Reorient. | Artiverse Whole | Artiverse Severe | Params | Time (ms) |
+|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| COPS | Released | 18.5 | 6.4 | 5.7 | 50.8 | 14.8 | 3.7 | 3.2 | 54.7 | 236.2M | 712 |
+| Find3D | Released | 38.4 | 26.0 | 23.0 | 23.0 | 26.5 | 13.3 | 11.1 | 33.7 | 46.2M | 282 |
+| CoSMo3D | Released | 41.8 | 27.7 | 23.6 | 19.6 | 37.2 | 16.6 | 14.1 | 26.3 | 57.5M | 251 |
+| PatchAlign3D | Released | 45.5 | 33.4 | 29.7 | 19.3 | 29.7 | 18.3 | 16.4 | 37.6 | 22.4M | 57 |
+| Point-BERT | Frozen + mask head | 64.7 ± 1.1 | 53.8 ± 1.8 | 48.2 ± 1.8 | 5.8 ± 0.5 | 52.5 ± 0.9 | 27.1 ± 0.6 | 24.9 ± 0.4 | 16.5 ± 0.1 | 22.1M | 140 |
+| Find3D | Frozen + mask head | 39.2 ± 0.8 | 26.8 ± 0.8 | 23.8 ± 0.7 | 23.5 ± 1.0 | 33.2 ± 0.3 | 7.6 ± 1.0 | 6.5 ± 1.3 | 30.9 ± 0.4 | 46.7M | 252 |
+| PatchAlign3D | Frozen + mask head | 51.5 ± 0.9 | 37.1 ± 1.4 | 31.7 ± 1.8 | 9.6 ± 0.3 | 37.9 ± 0.4 | 17.8 ± 1.7 | 16.6 ± 1.4 | 30.9 ± 0.3 | 23.1M | 46 |
+| Utonia | Frozen + mask head | 68.4 ± 1.0 | 60.8 ± 1.6 | 54.0 ± 1.3 | 4.2 ± 0.2 | 51.0 ± 0.8 | 25.0 ± 1.4 | 23.2 ± 1.1 | 18.4 ± 0.6 | 138.0M | 147 |
+| Point-BERT | Fine-tuned | 67.8 ± 0.3 | 59.5 ± 1.0 | 54.2 ± 0.9 | 6.7 ± 0.2 | 52.7 ± 0.4 | 24.4 ± 0.8 | 22.8 ± 0.5 | 17.9 ± 0.7 | 22.1M | 41 |
+| PointNeXt-S | From scratch | 43.3 ± 1.0 | 30.8 ± 0.8 | 27.4 ± 0.9 | 16.8 ± 0.6 | 37.1 ± 1.0 | 16.3 ± 0.7 | 15.3 ± 1.2 | 30.7 ± 0.9 | 22.6M | 52 |
+| PointLLM-7B | Fine-tuned | 53.6 ± 1.2 | 40.8 ± 1.5 | 36.6 ± 1.5 | 10.2 ± 0.8 | 49.1 ± 1.0 | 20.7 ± 1.4 | 18.1 ± 0.7 | 18.0 ± 1.3 | 6.78B | 483 |
+| Utonia | Fine-tuned | 63.6 ± 1.7 | 55.8 ± 2.6 | 50.6 ± 2.4 | 7.6 ± 0.6 | 44.1 ± 1.4 | 21.3 ± 1.7 | 19.8 ± 1.8 | 23.8 ± 0.8 | 137.6M | 159 |
+| **GeoRead3D** (ours) | — | **74.1 ± 0.4** | **71.2 ± 0.3** | **65.3 ± 0.4** | **3.0 ± 0.1** | **60.0 ± 0.8** | **34.9 ± 2.7** | **32.2 ± 2.3** | **12.7 ± 0.8** | 160.6M | 307 |
 
 ## Repository structure
 
