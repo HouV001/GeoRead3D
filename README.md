@@ -90,6 +90,28 @@ This runs, in order:
 
 Checkpoints are written to `GEOREAD3D_CKPT_DIR`. Every training script accepts `--max-steps` for a short run.
 
+## Pretrained weights
+
+The checkpoints of the final model are available as a single archive on [Google Drive](https://drive.google.com/file/d/1qa1GuWiE9kePJItdY_3BSYPTHgzv9zw0/view?usp=drive_link) (93 MB):
+
+```bash
+pip install gdown
+gdown 1qa1GuWiE9kePJItdY_3BSYPTHgzv9zw0
+unrar x GeoRead3D_checkpoints.rar        # or: 7z x GeoRead3D_checkpoints.rar
+mv GeoRead3D_checkpoints checkpoints     # or: export GEOREAD3D_CKPT_DIR=$PWD/GeoRead3D_checkpoints
+```
+
+| Checkpoint | Module | Used for |
+|---|---|---|
+| `pointbert_encoder.pt` | frozen Point-BERT encoder (from PointLLM-7B v1.2) | inference, training |
+| `segmenter.pt` | part segmenter | inference |
+| `plr.pt` | Part Localization Refiner | inference |
+| `gate_20261301.pt`, `gate_20261302.pt`, `gate_20261303.pt` | query gate, three seeds | inference |
+| `direct_20261901.pt`, `direct_20261911.pt`, `direct_20261921.pt` | direct-route evidence heads trained with GRS, three seeds | inference |
+| `segmenter_fold0.pt`, `segmenter_fold1.pt` | cross-fitting fold heads of the segmenter | training PLR |
+
+Seed k of the model pairs `gate_2026130k.pt` with the k-th direct head; `evaluate.py` runs all three.
+
 ## Evaluation
 
 ```bash
@@ -104,8 +126,6 @@ python scripts/score.py --dataset partnext --out outputs/partnext_scores.json
 ```
 
 `evaluate.py` runs both routes on four pose passes for the three recipe seeds, and `score.py` reports pointing, reorientation, whole-object rotation and severe error rates as mean and standard deviation over the seeds. Part descriptions are mapped to part names with the stored mapper answers in `data/expressions.json`.
-
-Model weights are not included in this repository.
 
 ## Citation
 
