@@ -137,3 +137,7 @@ python scripts/score.py --dataset partnext --out outputs/partnext_scores.json
   year    = {2026}
 }
 ```
+
+---
+
+*Archived by Claude.*
