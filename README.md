@@ -1,6 +1,6 @@
 # GeoRead3D: Grounding Part Descriptions for 3D Pointing and Reorientation
 
-*Archived by Claude.*
+*Maintained by Hou; archived by Claude.*
 
 > Official implementation of **GeoRead3D** for the paper *GeoRead3D: Grounding Part Descriptions for 3D Pointing and Reorientation* ([arXiv:2611.30519](https://arxiv.org/abs/2611.30519)).
 
